@@ -2,7 +2,7 @@ import { useState } from "react";
 import { User, Lock, Eye, EyeOff } from "lucide-react";
 import "./Login.css";
 
-export default function Login({ onLogin }) {
+export default function Login({ onLogin, onCreateAccount, onForgotPassword }) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -49,7 +49,7 @@ export default function Login({ onLogin }) {
               <input type="checkbox" className="remember-checkbox" />
               <span className="remember-text">Remember me</span>
             </label>
-            <button type="button" className="forgot-link">
+            <button type="button" className="forgot-link" onClick={onForgotPassword}>
               Forgot password?
             </button>
           </div>
@@ -60,7 +60,7 @@ export default function Login({ onLogin }) {
         </form>
 
         <p className="bottom-text">
-          Don't have an account? <button type="button" className="forgot-link create-account">Create Account</button>
+          Don't have an account? <button type="button" className="forgot-link create-account" onClick={onCreateAccount}>Create Account</button>
         </p>
       </div>
     </div>

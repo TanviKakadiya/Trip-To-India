@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 import Onboarding from './pages/Onboarding';
 import Home from './pages/Home';
 import StateDetails from './pages/StateDetails';
 import PlanItinerary from './pages/PlanItinerary';
 import GeneratedItinerary from './pages/GeneratedItinerary';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   const [currentView, setCurrentView] = useState('login');
@@ -29,7 +31,7 @@ function App() {
   };
 
   // Define which views should show the main Navbar
-  const showNav = !['login', 'onboarding'].includes(currentView);
+  const showNav = !['login', 'signup', 'onboarding'].includes(currentView);
 
   return (
     <div className="min-h-screen bg-[#faf8f5] font-inter">
@@ -38,7 +40,18 @@ function App() {
       )}
 
       {currentView === 'login' && (
-        <Login onLogin={() => handleNavigate('onboarding')} />
+        <Login 
+          onLogin={() => handleNavigate('onboarding')} 
+          onCreateAccount={() => handleNavigate('signup')}
+          onForgotPassword={() => alert('Password reset link has been sent to your email.')}
+        />
+      )}
+
+      {currentView === 'signup' && (
+        <Signup 
+          onSignup={() => handleNavigate('onboarding')} 
+          onLogin={() => handleNavigate('login')}
+        />
       )}
       
       {currentView === 'onboarding' && (
@@ -67,6 +80,8 @@ function App() {
           onHome={() => handleNavigate('home')}
         />
       )}
+
+      {showNav && <Footer />}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Minus, ChevronDown, Clock, Download, MapPin, Heart, Landmark, Coffee, Backpack, Sun, Waves, Camera, Briefcase, Droplet, Mountain, Footprints } from 'lucide-react';
+import { Plus, Minus, ChevronDown, Clock, Download, MapPin, Sun, Landmark, Coffee } from 'lucide-react';
 import { tipsData, defaultItinerary, cityItineraries, locationsData, locationSpecificTips } from '../data/tipsData';
 import { motion, AnimatePresence } from 'framer-motion';
 import './PlanItinerary.css';
@@ -127,7 +127,7 @@ export default function PlanItinerary() {
         <div className="itinerary-timeline">
           <div className="location-selection-row">
             <div className="select-group">
-              <label>Select State</label>
+              <label>SELECT STATE</label>
               <div className="custom-select-wrapper">
                 <select 
                   className={`custom-select ${selectedState ? 'active' : ''}`}
@@ -147,7 +147,7 @@ export default function PlanItinerary() {
             </div>
 
             <div className="select-group">
-              <label>Select Location</label>
+              <label>SELECT LOCATION</label>
               <div className="custom-select-wrapper">
                 <select 
                   className={`custom-select ${selectedCity ? 'active' : ''}`}

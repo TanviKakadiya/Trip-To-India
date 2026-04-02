@@ -1,0 +1,229 @@
+.footer-container {
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 80px 40px 40px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  /* Pattern overlay */
+  background-image: 
+    radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 60px;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+  }
+}
+
+/* BRAND COLUMN */
+.footer-brand .footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.footer-logo .trip { color: #f49342; }
+.footer-logo .to-india { color: #68d391; }
+
+.brand-desc {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 300px;
+  margin-bottom: 32px;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  background-color: #f49342;
+  transform: translateY(-4px);
+}
+
+/* LINK COLUMNS */
+.footer-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #ffffff;
+  position: relative;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #f49342;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-link {
+  color: #94a3b8;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.footer-link:hover {
+  color: #f49342;
+}
+
+/* CONTACT INFO */
+.contact-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.contact-icon {
+  color: #f49342;
+  flex-shrink: 0;
+}
+
+.contact-text {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* NEWSLETTER */
+.newsletter-desc {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  position: relative;
+  max-width: 320px;
+}
+
+.newsletter-input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 60px 14px 20px;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.newsletter-input:focus {
+  border-color: #f49342;
+}
+
+.newsletter-submit {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  background-color: #f49342;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.newsletter-submit:hover {
+  background-color: #e07f30;
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.copyright {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.back-to-top {
+  width: 48px;
+  height: 48px;
+  background-color: #f49342;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(244, 147, 66, 0.3);
+}
+
+.back-to-top:hover {
+  background-color: #e07f30;
+  transform: translateY(-4px);
+}

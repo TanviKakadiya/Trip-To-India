@@ -5,6 +5,19 @@ import "./Signup.css";
 export default function Signup({ onSignup, onLogin }) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setError("Passwords do not match. Please check again.");
+      return;
+    }
+    setError("");
+    onSignup();
+  };
 
   return (
     <div className="signup-container">
@@ -21,7 +34,7 @@ export default function Signup({ onSignup, onLogin }) {
           Create an account to start your adventure
         </p>
 
-        <form onSubmit={(e) => { e.preventDefault(); onSignup(); }}>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label className="form-label">Full Name</label>
             <div className="input-wrapper">
@@ -47,6 +60,8 @@ export default function Signup({ onSignup, onLogin }) {
                 placeholder="••••••••••" 
                 required 
                 className="form-input password-input" 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <button type="button" onClick={() => setShowPassword(!showPassword)} className="icon-button">
                 {showPassword ? <EyeOff /> : <Eye />}
@@ -63,12 +78,16 @@ export default function Signup({ onSignup, onLogin }) {
                 placeholder="••••••••••" 
                 required 
                 className="form-input password-input" 
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
               <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="icon-button">
                 {showConfirmPassword ? <EyeOff /> : <Eye />}
               </button>
             </div>
           </div>
+
+          {error && <p className="error-message">{error}</p>}
 
           <button type="submit" className="submit-button">
             Create Account
